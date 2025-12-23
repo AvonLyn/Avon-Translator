@@ -1,0 +1,184 @@
+.avon-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  background: linear-gradient(160deg, #ffffff, #f2f8f3);
+  border: 1px solid #e6ebdd;
+  color: #1f2a24;
+  border-radius: 14px;
+  padding: 16px 18px 14px 16px;
+  padding-right: 34px;
+  box-shadow: 0 16px 36px rgba(31, 42, 36, 0.18), 0 0 0 1px rgba(73, 176, 122, 0.08);
+  max-width: 360px;
+  font-family: 'Sora', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB',
+    'Heiti SC', sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.avon-tooltip-inner {
+  display: grid;
+  gap: 10px;
+}
+
+.avon-tooltip-inner.loading::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(73, 176, 122, 0.3);
+  border-top-color: #ffa62b;
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: middle;
+  animation: avon-spin 0.9s linear infinite;
+}
+
+.avon-field {
+  border: 1px solid #e6ebdd;
+  border-radius: 12px;
+  padding: 8px 10px;
+  background: #f7fbf4;
+  display: grid;
+  gap: 6px;
+}
+
+.avon-field-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2f6f53;
+  background: #dff4ea;
+  padding: 2px 8px;
+  border-radius: 999px;
+  width: fit-content;
+  letter-spacing: 0.02em;
+}
+
+.avon-field-value {
+  font-size: 14px;
+  color: #1f2a24;
+  line-height: 1.5;
+}
+
+.avon-field[data-key='translation'] .avon-field-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.avon-field[data-key='ipa'] .avon-field-value {
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: #2f6f53;
+}
+
+.avon-field-value p {
+  margin: 0;
+}
+
+.avon-field-value p + p {
+  margin-top: 6px;
+}
+
+.avon-field-value ul,
+.avon-field-value ol {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+.avon-field-value li {
+  margin: 2px 0;
+}
+
+.avon-inline-code {
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: #e9f3ec;
+  border-radius: 6px;
+  padding: 1px 4px;
+  font-size: 12px;
+}
+
+.avon-code {
+  background: #eef6ef;
+  border: 1px solid #dce8d8;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12px;
+  color: #2d3b33;
+}
+
+.avon-code code {
+  white-space: pre-wrap;
+}
+
+.avon-md-h1,
+.avon-md-h2,
+.avon-md-h3,
+.avon-md-h4,
+.avon-md-h5,
+.avon-md-h6 {
+  font-weight: 700;
+  color: #1f2a24;
+  margin: 4px 0;
+}
+
+.avon-md-h1 {
+  font-size: 16px;
+}
+
+.avon-md-h2 {
+  font-size: 15px;
+}
+
+.avon-md-h3 {
+  font-size: 14px;
+}
+
+.avon-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #63756a;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.avon-close:hover {
+  color: #ffa62b;
+}
+
+.avon-tooltip::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 14px;
+  border: 1px solid rgba(73, 176, 122, 0.12);
+  pointer-events: none;
+}
+
+.avon-tooltip::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: var(--avon-arrow-left, 24px);
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  transform: rotate(45deg);
+  border-top: 1px solid #e6ebdd;
+  border-left: 1px solid #e6ebdd;
+  box-shadow: 0 8px 20px rgba(31, 42, 36, 0.15);
+}
+
+@keyframes avon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

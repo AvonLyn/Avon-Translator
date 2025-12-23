@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>生词本 - Avon Translator</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>生词本</h1>
+          <p class="muted">只保留单词，支持搜索与批量删除。</p>
+        </div>
+        <a class="link-btn" href="options.html">返回设置</a>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>全部生词</h2>
+            <p class="muted">基于历史记录中的单词。</p>
+          </div>
+          <div class="card__actions toolbar">
+            <input id="search" class="search-input" type="search" placeholder="搜索单词/释义/音标" />
+            <select id="sort-vocab">
+              <option value="count">按次数</option>
+              <option value="time">按最新</option>
+            </select>
+            <button id="delete-selected" class="ghost" disabled>删除所选</button>
+          </div>
+        </div>
+        <div class="table" id="vocab-table">
+          <div class="table__head">
+            <span><input id="select-all" class="checkbox" type="checkbox" /></span>
+            <span>单词</span>
+            <span>音标</span>
+            <span>释义</span>
+            <span>次数</span>
+            <span>时间</span>
+          </div>
+          <div class="table__body" id="vocab-body"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="vocab.js"></script>
+  </body>
+</html>

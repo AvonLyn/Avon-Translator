@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>段落字段配置 - Avon Translator</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body data-field-type="paragraph">
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>段落字段配置</h1>
+          <p class="muted">添加/删除字段并设置总体规则。</p>
+        </div>
+        <a class="link-btn" href="tooltip-manager.html">返回翻译输出配置</a>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>总体规则</h2>
+            <p class="muted">影响段落场景的总体提示词。</p>
+          </div>
+          <div class="card__actions">
+            <button id="reset-defaults" class="ghost" type="button">恢复默认（规则+字段）</button>
+            <button id="save-rules" class="primary" type="button">保存规则</button>
+          </div>
+        </div>
+        <label class="field field--full">
+          <span>规则内容</span>
+          <textarea id="rules-input" rows="5" placeholder="输入总体规则"></textarea>
+        </label>
+        <div class="field field--full">
+          <span>固定返回格式（自动更新，仅展示）</span>
+          <pre id="json-format" class="code-block"></pre>
+        </div>
+        <div id="rules-status" class="status"></div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>字段管理</h2>
+            <p class="muted">可新增任意字段，支持搜索与批量删除。</p>
+          </div>
+          <div class="card__actions toolbar">
+            <input id="search" class="search-input" type="search" placeholder="搜索字段名称或提示词" />
+            <button id="add-field" class="ghost" type="button">新增字段</button>
+            <button id="delete-selected" class="ghost" type="button" disabled>删除所选</button>
+            <button id="save-fields" class="primary" type="button">保存字段</button>
+            <span id="fields-status" class="status inline-status"></span>
+          </div>
+        </div>
+        <div id="field-list" class="field-list"></div>
+      </section>
+    </main>
+
+    <script src="fieldManager.js"></script>
+  </body>
+</html>

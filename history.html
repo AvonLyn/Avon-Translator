@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>历史记录 - Avon Translator</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>历史记录</h1>
+          <p class="muted">支持搜索、排序和批量删除。</p>
+        </div>
+        <a class="link-btn" href="options.html">返回设置</a>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>全部记录</h2>
+            <p class="muted">数据保存在浏览器本地。</p>
+          </div>
+          <div class="card__actions toolbar">
+            <input id="search" class="search-input" type="search" placeholder="搜索文本/释义/音标" />
+            <select id="sort-history">
+              <option value="time">按最新</option>
+              <option value="count">按次数</option>
+            </select>
+            <button id="delete-selected" class="ghost" disabled>删除所选</button>
+          </div>
+        </div>
+        <div class="table" id="history-table">
+          <div class="table__head">
+            <span><input id="select-all" class="checkbox" type="checkbox" /></span>
+            <span>文本</span>
+            <span>音标</span>
+            <span>释义</span>
+            <span>次数</span>
+            <span>时间</span>
+          </div>
+          <div class="table__body" id="history-body"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="history.js"></script>
+  </body>
+</html>

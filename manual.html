@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手动翻译 - Avon Translator</title>
+    <link rel="stylesheet" href="options.css" />
+    <link rel="stylesheet" href="contentStyles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>手动翻译</h1>
+          <p class="muted">用于 PDF 等无法注入脚本的页面。请复制文本后粘贴翻译。</p>
+        </div>
+        <a class="link-btn" href="options.html">返回设置</a>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>输入内容</h2>
+            <p class="muted">支持单词或段落，字段配置与规则与翻译框一致。</p>
+          </div>
+          <div class="card__actions">
+            <button id="manual-translate" class="primary" type="button">翻译</button>
+          </div>
+        </div>
+        <label class="field field--full">
+          <span>文本</span>
+          <textarea id="manual-text" rows="6" placeholder="粘贴需要翻译的内容"></textarea>
+        </label>
+        <div id="manual-status" class="status"></div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>翻译结果</h2>
+            <p class="muted">渲染后的字段会展示在下方。</p>
+          </div>
+        </div>
+        <div id="manual-result" class="field-list"></div>
+      </section>
+    </main>
+
+    <script src="manual.js"></script>
+  </body>
+</html>

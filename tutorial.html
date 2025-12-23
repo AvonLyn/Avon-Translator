@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avon Translator 使用教程</title>
+    <link rel="stylesheet" href="options.css" />
+    <style>
+      ol,
+      ul {
+        padding-left: 20px;
+        line-height: 1.7;
+      }
+      .tutorial-note {
+        background: #f3fbf6;
+        border: 1px dashed #e6ebdd;
+        border-radius: 12px;
+        padding: 12px;
+        color: #2f3f35;
+      }
+      .code-inline {
+        background: #e9f3ec;
+        border-radius: 6px;
+        padding: 2px 6px;
+        font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>使用教程</h1>
+          <p class="muted">快速上手与完整配置指南。</p>
+        </div>
+        <a class="link-btn" href="options.html">返回设置</a>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>1. 安装与首次配置</h2>
+            <p class="muted">首次加载插件与必要参数设置。</p>
+          </div>
+        </div>
+        <ol>
+          <li>打开 <span class="code-inline">chrome://extensions</span>，启用开发者模式。</li>
+          <li>点击“加载已解压的扩展程序”，选择本项目目录。</li>
+          <li>进入设置页，填写 API Key（默认占位为 <span class="code-inline">{llm_api_key}</span>）。</li>
+          <li>确认模型与接口地址正确（默认 <span class="code-inline">gemini-2.5-flash</span>）。</li>
+          <li>点击“保存”，再点“测速”验证接口可用性。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>2. 快捷翻译</h2>
+            <p class="muted">划词后使用快捷键弹出翻译框。</p>
+          </div>
+        </div>
+        <ol>
+          <li>在网页中选中单词或段落。</li>
+          <li>按快捷键（默认 <span class="code-inline">Ctrl+Shift+L</span>）触发翻译。</li>
+          <li>翻译框会根据字段配置展示结果（可自定义字段）。</li>
+        </ol>
+        <div class="tutorial-note">
+          若快捷键无效，请到 <span class="code-inline">chrome://extensions/shortcuts</span> 设置全局命令，
+          或在设置页保存后自动同步。
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>3. 翻译输出配置（字段与规则）</h2>
+            <p class="muted">自定义翻译框输出字段与提示词。</p>
+          </div>
+        </div>
+        <ol>
+          <li>打开设置页 → “翻译输出配置”。</li>
+          <li>选择“单词字段”或“段落字段”。</li>
+          <li>在“总体规则”里设置通用规则（保存时会弹确认）。</li>
+          <li>在“字段管理”里新增字段：填写字段名称、变量名、提示词。</li>
+          <li>保存字段后，固定返回格式会自动更新（仅展示，不可手动修改）。</li>
+        </ol>
+        <div class="tutorial-note">
+          字段可自由增删，但至少保留 1 个字段。字段越多，响应越慢。
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>4. 生成变量名（JSON Key）</h2>
+            <p class="muted">用自然语言描述字段，自动生成 key。</p>
+          </div>
+        </div>
+        <ol>
+          <li>在字段管理中输入字段名称/提示词。</li>
+          <li>点击“生成变量名”，系统会使用模型生成 snake_case key。</li>
+          <li>如生成失败，会回退为安全的默认 key。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>5. 历史记录与生词本</h2>
+            <p class="muted">查看、搜索、排序与批量删除。</p>
+          </div>
+        </div>
+        <ol>
+          <li>在设置页点击“历史与生词管理”。</li>
+          <li>进入历史记录或生词本页面。</li>
+          <li>支持搜索、排序、复选删除。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>6. PDF / 无法注入页面</h2>
+            <p class="muted">Chrome PDF 页面无法注入脚本时的解决方案。</p>
+          </div>
+        </div>
+        <ol>
+          <li>在 PDF 页面按快捷键，会自动打开“手动翻译”。</li>
+          <li>在手动翻译页粘贴文本并点击“翻译”。</li>
+        </ol>
+        <div class="tutorial-note">
+          你也可以直接访问 <a href="manual.html">手动翻译页</a> 进行翻译。
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>7. Markdown 输出</h2>
+            <p class="muted">如果模型返回 Markdown，将自动渲染。</p>
+          </div>
+        </div>
+        <ul>
+          <li>支持标题、列表、粗斜体、行内代码与代码块。</li>
+          <li>复杂表格与嵌套布局建议改为纯文本输出。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>8. 常见问题排查</h2>
+            <p class="muted">遇到无法翻译时的排查路径。</p>
+          </div>
+        </div>
+        <ul>
+          <li>确认 API Key 可用，并可访问 <span class="code-inline">generativelanguage.googleapis.com</span>。</li>
+          <li>模型名称必须与 AI Studio 控制台一致。</li>
+          <li>设置页“测速”可检查接口是否可用。</li>
+          <li>翻译无结果时，检查字段是否为空或提示词是否过于严格。</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avon Translator 设置</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="page__header">
+        <div>
+          <div class="eyebrow">Avon Translator</div>
+          <h1>快捷翻译 · 设置与生词本</h1>
+          <p class="muted">配置热键、API 以及查看历史与生词本。</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>翻译输出配置</h2>
+            <p class="muted">管理单词与段落的字段、规则与返回格式。</p>
+          </div>
+          <div class="card__actions">
+            <a class="link-btn" href="tooltip-manager.html" target="_blank" rel="noreferrer">字段与规则</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>历史与生词管理</h2>
+            <p class="muted">进入历史记录与生词本的独立页面，支持搜索与批量删除。</p>
+          </div>
+          <div class="card__actions">
+            <a class="link-btn" href="history.html" target="_blank" rel="noreferrer">历史记录</a>
+            <a class="link-btn" href="vocab.html" target="_blank" rel="noreferrer">生词本</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <div>
+            <h2>基础配置</h2>
+            <p class="muted">调整快捷键、模型与 API Key（默认使用 {llm_api_key} 占位）。</p>
+          </div>
+          <div class="card__actions">
+            <button id="test-api" class="ghost" type="button">测速</button>
+            <button id="save-settings" class="primary" type="button">保存</button>
+          </div>
+        </div>
+        <form id="settings-form" class="grid grid-2">
+          <label class="field">
+            <span>热键（可选，形如 Ctrl+Shift+L）</span>
+            <input id="hotkey" name="hotkey" type="text" placeholder="Ctrl+Shift+L" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>模型 ID</span>
+            <input id="model" name="model" type="text" placeholder="gemini-2.5-flash" autocomplete="off" />
+          </label>
+          <label class="field">
+            <span>API 基础地址</span>
+            <input
+              id="endpoint"
+              name="endpoint"
+              type="text"
+              placeholder="https://generativelanguage.googleapis.com/v1beta"
+              autocomplete="off"
+            />
+          </label>
+          <label class="field">
+            <span>API Key</span>
+            <input id="apiKey" name="apiKey" type="password" placeholder="{llm_api_key}" autocomplete="off" />
+          </label>
+        </form>
+        <div class="hint">
+          <strong>提示：</strong>Chrome 也支持在 <code>chrome://extensions/shortcuts</code> 调整默认快捷键；此处为内容页热键。
+        </div>
+        <div id="status" class="status"></div>
+      </section>
+
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
